@@ -1,17 +1,95 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Snake and Apple</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Jungle</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Snake Game</h1>
-    <h2>Score: <span id="score">0</span></h2>
+<header>
+    <h1>SNAKE JUNGLE</h1>
 
-    <canvas id="game" width="400" height="400"></canvas>
+    <div class="stats">
+        <div>🏆 Score: <span id="score">0</span></div>
+        <div>⭐ Best: <span id="best">0</span></div>
+    </div>
+</header>
 
-    <script src="script.js"></script>
+<main>
+
+    <div class="game-container">
+
+        <canvas id="game" width="600" height="600"></canvas>
+
+        <!-- MAIN MENU -->
+        <div class="overlay" id="menu">
+            <h2>SNAKE JUNGLE</h2>
+            <p>Explore the jungle. Collect apples. Grow stronger.</p>
+
+            <button id="startBtn">START GAME</button>
+            <button id="howBtn">HOW TO PLAY</button>
+
+            <p>Best Score: <span id="menuBest">0</span></p>
+        </div>
+
+        <!-- PAUSE MENU -->
+        <div class="overlay hidden" id="pauseMenu">
+            <h2>GAME PAUSED</h2>
+            <p>Take a break!</p>
+
+            <button id="resumeBtn">RESUME</button>
+            <button id="pauseRestartBtn">RESTART</button>
+            <button id="pauseHomeBtn">MAIN MENU</button>
+        </div>
+
+        <!-- GAME OVER -->
+        <div class="overlay hidden" id="gameOver">
+            <h2>GAME OVER</h2>
+            <p>Your Score: <span id="finalScore">0</span></p>
+
+            <button id="retryBtn">PLAY AGAIN</button>
+            <button id="overHomeBtn">MAIN MENU</button>
+        </div>
+
+        <!-- INSTRUCTIONS -->
+        <div class="overlay hidden" id="instructions">
+            <h2>HOW TO PLAY</h2>
+            <p>1. Control your snake using the arrows.</p>
+            <p>2. Eat apples to grow longer.</p>
+            <p>3. Avoid hitting the walls and yourself.</p>
+            <p>4. Collect as many apples as possible!</p>
+
+            <button id="backBtn">BACK TO MENU</button>
+        </div>
+
+    </div>
+
+    <!-- GAME BUTTONS -->
+    <div class="game-actions">
+        <button id="pauseBtn">Ⅱ PAUSE</button>
+        <button id="restartBtn">↻ RESTART</button>
+        <button id="menuBtn">⌂ MENU</button>
+    </div>
+
+    <!-- MOBILE CONTROLS -->
+    <div class="controls">
+
+        <button data-dir="UP">▲</button>
+
+        <div class="side-buttons">
+            <button data-dir="LEFT">◀</button>
+            <button data-dir="DOWN">▼</button>
+            <button data-dir="RIGHT">▶</button>
+        </div>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
 </body>
 </html>
